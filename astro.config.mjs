@@ -3,9 +3,13 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	base: '/docs',
+	base: '/radash',
+	trailingSlash: 'always',
 	outDir: './docs',
 	site: 'https://zhifou.github.io/radash',
+	build: {
+		assets: 'static',
+	},
 	integrations: [
 		starlight({
 			title: 'Radash',
