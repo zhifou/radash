@@ -13,7 +13,7 @@ export default defineConfig({
 		starlight({
 			title: 'Radash',
 			social: {
-				github: 'https://github.com/radash',
+				github: 'https://github.com/sodiray/radash',
 			},
 			sidebar: [
 				{

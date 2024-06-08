@@ -4,22 +4,18 @@ group: "Getting Started"
 description: "Welcome to Radash"
 ---
 
-## Getting Started
+## 开始
 
-### Welcome to 2020s
+### 欢迎来到2020年代
 
-Radash is the next library you can't live without. First and foremost, it's powerful. With those 
-powerful functions, you get strong types and zero dependencies. If you can step out in a bit of 
-faith and try the functions out, I have no doubt you'll find yourself falling in love.
+Radash将是你不可或缺的下一个库。首先，它功能强大。凭借这些强大的功能，你可以获得稳定的类型和零依赖。如果你能带着一点信心尝试这些功能，我毫不怀疑你会爱上它。
 
-### Featured Functions
+### 特色功能
 
-Come, dip your toe in the water. Here are a few functions we can't live without anymore.
-Hopefully, you'll find them useful as well.
+来吧，先试试水。这里有一些我们再也无法离开的功能。希望你也会发现它们很有用。
 
 #### try
-The `_.try` function abstracts the logical fork of a try/catch and provides an _error
-first callback_ reminiscent response.
+_.try 函数抽象了 try/catch 的逻辑分支，并提供了一个类似于 error first callback 的响应。
 
 ```ts
 const [err, response] = await _.try(api.gods.create)({ name: 'Ra' })
@@ -29,8 +25,7 @@ if (err) {
 ```
 
 #### range
-The `_.range` function returns a generator that can be used for iterating. This means you'll
-never have to write a `for (let i)` loop again -- and you shouldn't.
+_.range 函数返回一个可用于迭代的生成器。这意味着你永远都不需要再写 for (let i) 循环了——而且你也不应该写了。
 
 ```ts
 for (const i of _.range(0, 4)) {
@@ -43,9 +38,7 @@ for (const i of _.range(10, 20, 2)) {
 ```
 
 #### select
-The `_.select` function takes a mapper and filter function and runs them together for you in
-a single iteration. No more writing a reduce because you need to map and filter, and you don't
-want to implement them separately for performance's sake.
+_.select 函数同时接收映射函数和过滤函数，并在单次迭代中一起运行它们。你再也不需要写 reduce 函数来进行映射和过滤了，而且为了性能考虑，你也不想将它们分开实现。
 
 ```ts
 const superPoweredGodsFromEgypt = _.select(
@@ -56,8 +49,7 @@ const superPoweredGodsFromEgypt = _.select(
 ```
 
 #### defer
-The `_.defer` function lets you register functions to run as cleanup while running an async function. It's 
-like a try/finally, but you can register the finally block at specific times.
+_.defer 函数允许你在运行异步函数时注册函数以进行清理。它类似于 try/finally 结构，但你可以在特定时间注册 finally 块。
 
 ```ts
 await _.defer(async (defer) => {
@@ -76,31 +68,22 @@ await _.defer(async (defer) => {
 ```
 
 #### objectify
-The `_.objectify` function helps you convert a list to an object in one step. Typically, we either do this
-in two steps or write a reduce.
+_.objectify 函数可帮助你一步将列表转换为对象。通常，我们要么分两步进行此操作，要么编写一个 reduce 函数。
 
 ```ts
 const godsByCulture = _.objectify(gods, g => g.name, g => g.culture)
 ```
 
-## Love and Hate
+## 爱与不爱
 
 ### Lodash
 
-Lodash was incredible. When JavaScript was still maturing, it provided the power to things you couldn't
-easily do in the vanilla. That was last decade. In this decade, the needs are different. The goal with Radash
-is to provide the powerful functions you need, not the ones the runtimes now provide, and to do it with great types
-and source code that's easy to read and understand.
+Lodash 非常出色。在 JavaScript 仍在逐步成熟之时，Lodash 提供了在原生 JavaScript 中难以轻松实现的功能。那是上一个十年。在这十年里，需求已经不同了。Radash 的目标是提供你需要的强大功能，而不是运行时现在提供的功能，并通过易于阅读和理解的优质类型和源代码来实现这一点。
 
-#### Saying No
+#### 拒绝
 
-Radash does not provide `_.map` or `_.filter` functions. They were helpful before optional chaining and nullish coalescing.
-Now, there really isn't a need.  
+Radash 不提供 _.map 或 _.filter 函数。在可选链和空值合并操作符出现之前，它们确实很有帮助。但现在，我们真的不再需要它们了。
 
-In the last ten years, the JavaScript community as a whole, and the Typescript community specifically, has moved
-closer to some key values: **deterministic is good, polymorphic is bad, strong types are everything**. A part of Lodash's
-charm was that it let you pass different types to a function and get other behavior based on the type. An example 
-is the `_.map` function, which can take a collection or an object and map over either. Radash doesn't provide that
-kind of polymorphic behavior.  
+在过去的十年里，整个 JavaScript 社区，尤其是 TypeScript 社区，越来越接近一些关键价值观：确定性是好的，多态性是不好的，强类型是至关重要的。Lodash 的一部分魅力在于，它允许你将不同类型的参数传递给函数，并根据类型获得不同的行为。例如，_.map 函数可以接受一个集合或对象，并对其进行映射。但 Radash 不提供这种多态行为。
 
-Sorry, not sorry.
+对此，我表示遗憾，但并不抱歉。
