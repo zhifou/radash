@@ -1,7 +1,7 @@
 {
-  "name": "@example/starlight-basics",
+  "name": "@zhifou/radash",
   "type": "module",
-  "version": "0.0.1",
+  "version": "12.1.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
