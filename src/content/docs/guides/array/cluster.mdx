@@ -4,11 +4,9 @@ group: 'Array'
 description: Split a list into many lists of the given size
 ---
 
-## Basic usage
+## 基础用法
 
-Given an array of items and a desired cluster size (`n`), returns an array
-of arrays. Each child array containing `n` (cluster size) items
-split as evenly as possible.
+给定一个项目数组和一个期望的簇大小（n），函数应该返回一个数组的数组（即二维数组），其中每个子数组包含尽可能均匀分配的n个（簇大小）项目。如果原始数组中的项目总数不能被n整除，那么最后一个子数组中的项目数量可能会少于n。
 
 ```ts
 import { cluster } from 'radash'

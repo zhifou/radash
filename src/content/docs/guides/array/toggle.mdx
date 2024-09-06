@@ -4,9 +4,9 @@ description: Toggles an items existance in an array
 group: 'Array'
 ---
 
-## Basic usage
+## 基础用法
 
-If the item matching the condition already exists in the list it will be removed. If it does not it will be added.
+如果列表中已存在与条件匹配的项目，则将其删除。如果不存在，则将其添加。
 
 ```ts
 import { toggle } from 'radash'
@@ -19,7 +19,7 @@ toggle(gods, 'vishnu') // => [ra, zeus, loki, vishnu]
 
 ### toggle(list, item, identity)
 
-You can pass an optional `toKey` function to determine the identity of non-primitive values. Helpful when working with more complex data types.
+您可以传递一个可选的toKey函数来确定非原始值的身份。在处理更复杂的数据类型时很有帮助。
 
 ```ts
 import { toggle } from 'radash'
@@ -37,7 +37,7 @@ toggle(gods, vishnu, g => g.name) // => [ra, zeus, loki, vishnu]
 
 ### toggle(list, item, identity, options)
 
-By default, toggle will append the item if it does not exist. If you need to prepend the item instead you can override the `strategy` in the options argument.
+默认情况下，如果项目不存在，toggle会将其附加到末尾。如果您需要将其前置，可以在选项参数中覆盖strategy。
 
 ```ts
 import { toggle } from 'radash'

@@ -4,13 +4,13 @@ group: 'Array'
 description: Create a range used for iterating
 ---
 
-## Basic usage
+## 基础用法
 
-Given a start, end, value, and step size returns a generator that will yield values from start to end by step size. Useful for replacing `for (let i = 0)` with `for of`. Range will return a generator that `for of` will call one at a time, so it's safe to create large ranges.
+给定一个开始值、结束值、值和步长大小，返回一个生成器，该生成器将按步长大小从开始值生成到结束值。这对于用for...of循环替换for (let i = 0)很有用。Range将返回一个生成器，for...of将逐个调用它，因此创建大量范围也是安全的。
 
-The interface is identical to `list`.
+该接口与list相同。
 
-_A hat tip to Python's `range` functionality_
+向Python的range功能致敬（这里的意思是，虽然可能不是直接模仿Python的range函数，但设计上借鉴了其概念或功能）
 
 ```ts
 import { range } from 'radash'
@@ -33,13 +33,13 @@ for (const i of range(0, 5)) {
 }
 ```
 
-## Signatures
+## 签名
 
-The range function can do a lot with different arguments.
+range函数可以通过不同的参数做很多事情。
 
 ### range(size)
 
-When givin a single argument, it's treated as the `size`. Returns a generator that yields values from 0 to `size`.
+当给定一个参数时，它被视为size（大小）。返回一个生成器，该生成器生成从0到size的值。
 
 ```ts
 range(3) // yields 0, 1, 2, 3
@@ -47,7 +47,7 @@ range(3) // yields 0, 1, 2, 3
 
 ### range(start, end)
 
-When given two arguments, they're treated as the `start` and `end`. Returns a generator that yields values from `start` to `end`
+当给定两个参数时，它们被视为start（开始）和end（结束）。返回一个生成器，该生成器生成从start到end的值。
 
 ```ts
 range(2, 6) // yields 2, 3, 4, 5, 6
@@ -55,7 +55,7 @@ range(2, 6) // yields 2, 3, 4, 5, 6
 
 ### range(start, end, value)
 
-When given a third argument it's treated as the `value` to be yielded in the generator. If the `value` is a function it will be called, with an index argument, to create every value.
+当给定第三个参数时，它被视为生成器中要生成的value（值）。如果value是一个函数，那么它会带着一个索引参数被调用，以创建每个值。
 
 ```ts
 range(2, 4, {})       // yields {}, {}, {}
@@ -65,7 +65,7 @@ range(2, 4, (i) => i) // yields 2, 3, 4
 
 ### range(start, end, value, step)
 
-When given a fourth argument it's treated as the `step` size to skip when yielding values from `start` to `end`.
+当给定第四个参数时，它被视为从start到end生成值时跳过的step（步长）大小。
 
 ```ts
 range(2, 4, i => i, 2)      // yields 2, 4

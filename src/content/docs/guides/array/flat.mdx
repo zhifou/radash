@@ -4,9 +4,9 @@ group: 'Array'
 description: Flatten an array of arrays into a single dimension
 ---
 
-## Basic usage
+## 基础用法
 
-Given an array that contains many arrays, return a new array where all items from the children are present at the top level.
+给定一个包含多个数组的数组，返回一个新数组，其中所有子数组中的项都位于顶级。
 
 ```ts
 import { flat } from 'radash'
@@ -16,4 +16,4 @@ const gods = [['ra', 'loki'], ['zeus']]
 flat(gods) // => [ra, loki, zeus]
 ```
 
-Note, `_.flat` is not recursive and will not flatten children of children of children ... of children. It will only flatten `T[][]` an array of arrays.
+注意，_.flat 不是递归的，它不会展平子数组的子数组的子数组...的子数组。它只会展平 T[][]（数组的数组）。
