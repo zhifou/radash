@@ -4,9 +4,9 @@ group: 'Array'
 description: Iterate over a callback n times
 ---
 
-## Basic usage
+## 基础用法
 
-A bit like `forEach` meets `reduce`. Useful for running a function `n` number of times to generate a value. The `_.iterate` function takes a count (the number of times to run the callback), a callback function, and an initial value. The callback is run _count_ many times as a reducer and the accumulated value is then returned.
+有点像 forEach 遇到了 reduce。这对于运行一个函数 n 次以生成一个值很有用。_.iterate 函数接受一个计数（回调要运行的次数）、一个回调函数和一个初始值。回调函数作为归约器运行 count 次，然后返回累积的值。
 
 ```ts
 import { iterate } from 'radash'
@@ -20,6 +20,4 @@ const value = iterate(
 ) // => 10
 ```
 
-Note, this is **NOT** zero indexed. If you pass a `count` of 5
-you will get an index of 1, 2, 3, 4, 5 in the callback
-function.
+请注意，这不是从零开始的索引。如果你传递一个 count 为 5，则在回调函数中将获得索引 1, 2, 3, 4, 5。

@@ -4,12 +4,9 @@ group: 'Array'
 description: Creates an object with counts of occurrences of items
 ---
 
-## Basic usage
+## 基础用法
 
-Given an array of objects and an identity callback function to determine
-how each object should be identified. Returns an object where the keys
-are the id values the callback returned and each value is an integer
-telling how many times that id occurred.
+给定一个对象数组和一个用于确定每个对象如何被识别的身份回调函数。该函数返回一个对象，其中键是回调函数返回的ID值，每个值是一个整数，表示该ID出现的次数。
 
 ```ts
 import { counting } from 'radash'
